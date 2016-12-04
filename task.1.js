@@ -13,7 +13,7 @@ let getNumber = () => {
   i++;
   return delay(1000).then(() => {
 	 return i;
-  })
+  });
 }
 
 app.get('/', (req, res) => {
