@@ -5,7 +5,7 @@ const calc = require('../task.2.js');
 chai.should();
 
 describe("Calculations", () => {
-  it.skip("Should return correct result from calculating two floats", () => {
+  it("Should return correct result from calculating two floats", () => {
 	 let result = calc.calcFloat(0.1, 0.2);
 	 
 	 result.should.equal(0.3);
