@@ -32,7 +32,7 @@ app.get('/api/message', (req, res, next) => {
   function getMessage() {
 	 this.message = "Hello, world";
 	 
-	 return Promise(function (resolve) {
+	 return new Promise(function (resolve) {
 		resolve(this.message);
 	 });
   }
