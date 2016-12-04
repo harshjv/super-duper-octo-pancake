@@ -1,5 +1,5 @@
 /*
-	This server must return different numbers for each request. In order, from 0 to ...
+ This server must return different numbers for each request. In order, from 0 to ...
  */
 const express = require('express');
 const Promise = require('bluebird');
@@ -25,9 +25,25 @@ app.get('/api/number', (req, res, next) => {
 	 return res.json({
 		number: num
 	 });
-  });
-  
+  }).catch(next);
 });
+
+app.get('/api/message', (req, res, next) => {
+  function getMessage() {
+	 this.message = "Hello, world";
+	 
+	 return Promise(function (resolve) {
+		resolve(this.message);
+	 });
+  }
+  
+  getMessage().then((message) => {
+	 return res.json({
+		message: message
+	 });
+  }).catch(next);
+});
+
 
 app.listen(config.http.port, config.http.bind, (err) => {
   if (err) {
