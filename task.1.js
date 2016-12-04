@@ -11,7 +11,7 @@ let i = 0;
 
 let getNumber = () => {
   i++;
-  return delay(1000).then(() => {
+  return delay(1).then(() => {
 	 return i;
   });
 }
