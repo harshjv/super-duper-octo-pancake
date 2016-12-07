@@ -1,18 +1,9 @@
-/*
-	Calculating float and returns float
- */
-let calcFloat = (a, b) => {
-  return a + b;
-}
+const BigNumber = require('bignumber.js')
 
-/*
-	Calculate big number and returns string
- */
-let calcBig = (a, b) => {
-  return (a + b).toString();
-}
+const calcFloat = (a, b) => Number(new BigNumber(a).plus(b).toString())
+const calcBig = (a, b) => new BigNumber(a).plus(b).toString()
 
 module.exports = {
   calcFloat: calcFloat,
   calcBig: calcBig
-};
+}
